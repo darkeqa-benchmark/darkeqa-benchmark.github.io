@@ -1,6 +1,6 @@
 # DarkEQA
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [DarkEQA website](https://darkeqa-benchmark.github.io/).
 
 If you find DarkEQA is useful for your work, please cite:
 ```
