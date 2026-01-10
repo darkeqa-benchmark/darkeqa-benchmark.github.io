@@ -322,10 +322,7 @@
                                 pipeline. Specifically, across multiple
                                 degradation severities (L1–L5, increasing
                                 severity), we synthesize two paired low-light
-                                variants per original image:
-                            </p>
-                            <p>
-                                (i) A
+                                variants per original image: (i) A
                                 <strong>noise-free EV-drop variant</strong> and
                                 (ii) a
                                 <strong>physics-motivated variant</strong> with
@@ -370,7 +367,20 @@
                             <p>
                                 We build the dataset for evaluation upon a
                                 representative subset of 52 scenes from HM3D-Sem
-                                dataset.
+                                dataset. For each scene, we record a
+                                human-demonstrated navigation trajectory that
+                                systematically explores the environment to
+                                maximize spatial coverage. To generate the
+                                ground-truth QA pairs, we uniformly subsample
+                                the trajectory and select keyframes at a fixed
+                                time interval (e.g., one frame every 2,s),
+                                rendering their geometric and semantic
+                                modalities (e.g., RGB, depth, segmentation). We
+                                then use deterministic procedure to
+                                automatically generate QA pairs from the
+                                pre-computed per-keyframe statistics. For
+                                detailed procedurs, please refer to Section 3-B
+                                of our paper.
                             </p>
                         </div>
 
