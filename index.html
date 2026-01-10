@@ -360,6 +360,90 @@
             </div>
         </section>
 
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-full-width">
+                        <h2 class="title is-3">Experiments</h2>
+
+                        <!--Analysis Figure-->
+                        <div
+                            class="has-text-justified"
+                            style="margin: 1.5rem 0"
+                        >
+                            <img
+                                src="./static/images/fig_analysis.png"
+                                alt="Evaluation summary on our DarkEQA"
+                            />
+                        </div>
+                        <p class="has-text-justified"
+                           style="
+                                font-size: 0.9rem;
+                                color: #666;
+                                margin-top: 0.5rem;
+                                "
+                        >
+                            Degradation level indicates the severity of low-light
+                            corruption: L0 corresponds to the original (well-lit) input,
+                            and higher levels (L1 → L5) denote progressively darker
+                            (lower-illumination) inputs. We evaluate a range of
+                            open-source VLMs (LLaVA, InternVL,
+                            and Qwen-VL series, 7B–32B). The shaded regions in
+                            (a) and (b) denote the minimum–maximum accuracy across
+                            models at each degradation level.
+                            (a) Impact of noise injection. (b) Impact of LLIE pre-processing.
+                            (c) Model-wise comparison. (d) Image samples enhanced with LLIE model.
+                            We include GPT-4 as a Blind-LLM baseline (evaluated without vision;
+                            gray dashed line) and GPT-4o [16] as an upper-bound reference
+                            (black line).
+                        </p>
+                        <br>
+
+                        <!--Question-wise Accuracy Figure-->
+                        <div
+                            class="has-text-centered"
+                            style="margin: 1.5rem 0"
+                        >
+                            <img
+                                src="./static/images/fig_question_wise.png"
+                                alt="Question-wise evaluation result on our DarkEQA"
+                                style="width: 60%"
+                            />
+                        </div>
+                        <p class="has-text-justified"
+                           style="
+                                font-size: 0.9rem;
+                                color: #666;
+                                margin-top: 0.5rem;
+                                "
+                        >
+                            We plot VLM accuracy across different question types under
+                            increasing low-light degradation, where darker lines indicate
+                            more severe degradation and the gray dashed line denotes
+                            the GPT-4 Blind-LLM baseline. We observe significant drops
+                            in “Room Type Recognition” and “Object Attribute – Color,”
+                            where VLM performance falls below the GPT-4 Blind-LLM baseline.
+                        </p>
+                        <br>
+
+                        <!--Full Result Table-->
+                        <div
+                            class="has-text-centered"
+                            style="margin: 1.5rem 0"
+                        >
+                            <img
+                                src="./static/images/results_table.png"
+                                alt="Full evaluation result table on our DarkEQA"
+                            />
+                        </div>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section" id="BibTeX">
             <div class="container is-max-desktop content">
                 <h2 class="title">BibTeX</h2>
