@@ -346,7 +346,7 @@
                             </p>
                         </div>
 
-                        <!-- Low-Light Image Synthesis for Benchmark Inputs -->
+                        <!--Dataset Construction-->
                         <div class="content has-text-justified">
                             <h3 class="title is-4">Dataset Construction</h3>
                             <p>
@@ -376,69 +376,66 @@
                                 alt="Evaluation summary on our DarkEQA"
                             />
                         </div>
-                        <p class="has-text-justified"
-                           style="
+                        <p
+                            class="has-text-justified"
+                            style="
                                 font-size: 0.9rem;
                                 color: #666;
                                 margin-top: 0.5rem;
-                                "
+                            "
                         >
-                            Degradation level indicates the severity of low-light
-                            corruption: L0 corresponds to the original (well-lit) input,
-                            and higher levels (L1 → L5) denote progressively darker
-                            (lower-illumination) inputs. We evaluate a range of
-                            open-source VLMs (LLaVA, InternVL,
-                            and Qwen-VL series, 7B–32B). The shaded regions in
-                            (a) and (b) denote the minimum–maximum accuracy across
-                            models at each degradation level.
-                            (a) Impact of noise injection. (b) Impact of LLIE pre-processing.
-                            (c) Model-wise comparison. (d) Image samples enhanced with LLIE model.
-                            We include GPT-4 as a Blind-LLM baseline (evaluated without vision;
-                            gray dashed line) and GPT-4o [16] as an upper-bound reference
-                            (black line).
+                            Degradation level indicates the severity of
+                            low-light corruption: L0 corresponds to the original
+                            (well-lit) input, and higher levels (L1 → L5) denote
+                            progressively darker (lower-illumination) inputs. We
+                            evaluate a range of open-source VLMs
+                            (LLaVA,InternVL, and Qwen-VL series, 7B–32B). The
+                            shaded regions in (a) and (b) denote the
+                            minimum–maximum accuracy across models at each
+                            degradation level. (a) Impact of noise injection.
+                            (b) Impact of LLIE pre-processing. (c) Model-wise
+                            comparison. (d) Image samples enhanced with LLIE
+                            model. We include GPT-4 as a Blind-LLM baseline
+                            (evaluated without vision; gray dashed line) and
+                            GPT-4o [16] as an upper-bound reference (black
+                            line).
                         </p>
-                        <br>
+                        <br />
 
                         <!--Question-wise Accuracy Figure-->
-                        <div
-                            class="has-text-centered"
-                            style="margin: 1.5rem 0"
-                        >
+                        <div class="has-text-centered" style="margin: 1.5rem 0">
                             <img
                                 src="./static/images/fig_question_wise.png"
                                 alt="Question-wise evaluation result on our DarkEQA"
                                 style="width: 60%"
                             />
                         </div>
-                        <p class="has-text-justified"
-                           style="
+                        <p
+                            class="has-text-justified"
+                            style="
                                 font-size: 0.9rem;
                                 color: #666;
                                 margin-top: 0.5rem;
-                                "
+                            "
                         >
-                            We plot VLM accuracy across different question types under
-                            increasing low-light degradation, where darker lines indicate
-                            more severe degradation and the gray dashed line denotes
-                            the GPT-4 Blind-LLM baseline. We observe significant drops
-                            in “Room Type Recognition” and “Object Attribute – Color,”
-                            where VLM performance falls below the GPT-4 Blind-LLM baseline.
+                            We plot VLM accuracy across different question types
+                            under increasing low-light degradation, where darker
+                            lines indicate more severe degradation and the gray
+                            dashed line denotes the GPT-4 Blind-LLM baseline. We
+                            observe significant drops in “Room Type Recognition”
+                            and “Object Attribute – Color,” where VLM
+                            performance falls below the GPT-4 Blind-LLM
+                            baseline.
                         </p>
-                        <br>
+                        <br />
 
                         <!--Full Result Table-->
-                        <div
-                            class="has-text-centered"
-                            style="margin: 1.5rem 0"
-                        >
+                        <div class="has-text-centered" style="margin: 1.5rem 0">
                             <img
                                 src="./static/images/results_table.png"
                                 alt="Full evaluation result table on our DarkEQA"
                             />
                         </div>
-                    </div>
-
-
                     </div>
                 </div>
             </div>
