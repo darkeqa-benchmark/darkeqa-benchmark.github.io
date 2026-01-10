@@ -234,20 +234,125 @@
 
         <section class="section">
             <div class="container is-max-desktop">
-                <!-- Animation. -->
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-full-width">
                         <h2 class="title is-3">
-                            Waveform Manipulation for Image Generation
+                            Dataset Construction and QA Pair Generation
                         </h2>
-
-                        <!-- Single Waveform. -->
                         <div class="content has-text-justified">
-                            <h3 class="title is-4">Single Waveform</h3>
                             <p>
-                                <span class="dnerf">Sound2Scene</span> generates
-                                diverse images in a wide variety of categories
-                                from generic input sounds.
+                                Our <span class="dnerf">DarkEQA</span> is
+                                designed to evaluate
+                                <strong
+                                    >VLMs’ recognition of core perceptual
+                                    primitives</strong
+                                >
+                                from a single image-question pair under
+                                controlled low-light conditions. We synthesize
+                                low-light images from the HM3D dataset. And we
+                                deterministically generate Question-Answer (QA)
+                                pairs.
+                            </p>
+                        </div>
+
+                        <!-- Low-Light Image Synthesis for Benchmark Inputs -->
+                        <div class="content has-text-justified">
+                            <h3 class="title is-4">
+                                Low-Light Image Synthesis for Benchmark Inputs
+                            </h3>
+
+                            <div class="has-text-centered">
+                                <img
+                                    src="./static/images/low_light_image_synthesis.png"
+                                    alt="Low-light image synthesis pipeline"
+                                />
+                            </div>
+                            <p
+                                class="has-text-justified"
+                                style="
+                                    font-size: 0.9rem;
+                                    color: #666;
+                                    margin-top: 0.5rem;
+                                "
+                            >
+                                To generate controlled low-light inputs for our
+                                benchmark, we adopt an ISP-inspired unprocessing
+                                and noise formulation from prior work.
+                                Crucially, we produce paired variants for each
+                                original image to disentangle failure sources in
+                                VLM-based EQA: (a) a physics-based branch (top)
+                                that unprocesses sRGB to Bayer RAW, injects four
+                                noise components in RAW, and then applies EV
+                                drop and gamma compression; and (b) a noise-free
+                                branch (bottom) that applies the same EV drop in
+                                linear RGB without noise injection. This paired
+                                design enables separate evaluation of
+                                performance degradation due to illumination
+                                reduction versus sensor noise. The bottom-left
+                                panel summarizes the sRGB→RAW unprocessing
+                                steps, and the bottom-right panel visualizes the
+                                four noise components (shot, read, row-pattern,
+                                and quantization noise) as independent signals.
+                                The small red boxes in the read and row noise
+                                examples indicate zoomed-in crops for
+                                visualization.
+                            </p>
+
+                            <p>
+                                We design a physicsbased low-light synthesis
+                                pipeline. Specifically, across multiple
+                                degradation severities (L1–L5, increasing
+                                severity), we synthesize two paired low-light
+                                variants per original image:
+                            </p>
+                            <p>
+                                (i) A
+                                <strong>noise-free EV-drop variant</strong> and
+                                (ii) a
+                                <strong>physics-motivated variant</strong> with
+                                level-dependent sensor noise injection in the
+                                RAW domain, as in the above image. This design
+                                enables disentangling the respective impacts of
+                                illumination degradation and sensor noise on
+                                perceptual performance of VLMs.
+                            </p>
+                            <p>
+                                Below is the synthesized low-light image
+                                examples across degradation levels L0–L5:
+                            </p>
+
+                            <div class="has-text-centered">
+                                <img
+                                    src="./static/images/low-light_img_synth_ex.png"
+                                    alt="Low-light image synthesis pipeline"
+                                />
+                            </div>
+                            <p
+                                class="has-text-justified"
+                                style="
+                                    font-size: 0.9rem;
+                                    color: #666;
+                                    margin-top: 0.5rem;
+                                "
+                            >
+                                Synthesized low-light image examples across
+                                degradation levels L0–L5. The top row shows EV
+                                drop only, while the bottom row shows EV drop
+                                combined with noise injection. The lower-right
+                                insets show 1/4-image crops with pixel
+                                intensities amplified for visibility; the
+                                numbers (×10, ×20, ×50) indicate the
+                                amplification factor.
+                            </p>
+                        </div>
+
+                        <!-- Low-Light Image Synthesis for Benchmark Inputs -->
+                        <div class="content has-text-justified">
+                            <h3 class="title is-4">Dataset Construction</h3>
+                            <p>
+                                We build the dataset for evaluation upon a
+                                representative subset of 52 scenes from HM3D-Sem
+                                dataset.
                             </p>
                         </div>
                     </div>
