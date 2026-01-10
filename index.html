@@ -169,15 +169,40 @@
         <section class="hero teaser">
             <div class="container is-max-widescreen">
                 <div class="hero-body">
-                    <img
-                        src="./static/images/DarkEQA_teaser.png"
-                        alt="DarkEQA Teaser"
-                        style="width: 100%"
-                    />
-                    <h2 class="subtitle has-text-centered">
-                        DarkEQA benchmarks vision-language models for embodied
-                        question answering in low-light indoor environments.
-                    </h2>
+                    <figure class="has-text-centered">
+                        <img
+                            src="./static/images/DarkEQA_teaser.png"
+                            alt="DarkEQA Teaser"
+                            style="width: 100%"
+                        />
+                        <div class="content has-text-justified">
+                            <figcaption
+                                class="has-text-centered"
+                                style="
+                                    font-size: 0.9rem;
+                                    color: #666;
+                                    margin-top: 0.5rem;
+                                    font-style: italic;
+                                "
+                            >
+                                Traditional Embodied Question Answering (EQA)
+                                primarily evaluates VLMs on well-lit images,
+                                overlooking their robustness to real-world
+                                low-light conditions. We present DarkEQA, a new
+                                benchmark designed to address this evaluation
+                                void. DarkEQA assesses VLM performance under two
+                                distinct conditions: clean, well-lit inputs (L0)
+                                and a multi-level ladder of physics-based
+                                low-light images (L1-L5). This heterogeneous
+                                design enables a clear analysis of both
+                                commonsense reasoning and robustness to visual
+                                degradation. Furthermore, the benchmark examines
+                                the effect of applying Low-Light Image
+                                Enhancement (LLIE) models as a pre-processing
+                                step.
+                            </figcaption>
+                        </div>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -261,42 +286,36 @@
                                 Low-Light Image Synthesis for Benchmark Inputs
                             </h3>
 
-                            <div class="has-text-centered">
+                            <figure class="has-text-centered">
                                 <img
                                     src="./static/images/low_light_image_synthesis.png"
                                     alt="Low-light image synthesis pipeline"
                                 />
-                            </div>
-                            <p
-                                class="has-text-justified"
-                                style="
-                                    font-size: 0.9rem;
-                                    color: #666;
-                                    margin-top: 0.5rem;
-                                "
-                            >
-                                To generate controlled low-light inputs for our
-                                benchmark, we adopt an ISP-inspired unprocessing
-                                and noise formulation from prior work.
-                                Crucially, we produce paired variants for each
-                                original image to disentangle failure sources in
-                                VLM-based EQA: (a) a physics-based branch (top)
-                                that unprocesses sRGB to Bayer RAW, injects four
-                                noise components in RAW, and then applies EV
-                                drop and gamma compression; and (b) a noise-free
-                                branch (bottom) that applies the same EV drop in
-                                linear RGB without noise injection. This paired
-                                design enables separate evaluation of
-                                performance degradation due to illumination
-                                reduction versus sensor noise. The bottom-left
-                                panel summarizes the sRGB→RAW unprocessing
-                                steps, and the bottom-right panel visualizes the
-                                four noise components (shot, read, row-pattern,
-                                and quantization noise) as independent signals.
-                                The small red boxes in the read and row noise
-                                examples indicate zoomed-in crops for
-                                visualization.
-                            </p>
+                                <figcaption
+                                    style="
+                                        font-size: 0.9rem;
+                                        color: #666;
+                                        margin-top: 0.5rem;
+                                    "
+                                >
+                                    To generate controlled low-light inputs for
+                                    our benchmark, we adopt an ISP-inspired
+                                    unprocessing and noise formulation from
+                                    prior work. Crucially, we produce paired
+                                    variants for each original image to
+                                    disentangle failure sources in VLM-based
+                                    EQA: (a) a physics-based branch (top) that
+                                    unprocesses sRGB to Bayer RAW, injects four
+                                    noise components in RAW, and then applies EV
+                                    drop and gamma compression; and (b) a
+                                    noise-free branch (bottom) that applies the
+                                    same EV drop in linear RGB without noise
+                                    injection. This paired design enables
+                                    separate evaluation of performance
+                                    degradation due to illumination reduction
+                                    vs. sensor noise.
+                                </figcaption>
+                            </figure>
 
                             <p>
                                 We design a physicsbased low-light synthesis
@@ -321,29 +340,28 @@
                                 examples across degradation levels L0–L5:
                             </p>
 
-                            <div class="has-text-centered">
+                            <figure class="has-text-centered">
                                 <img
                                     src="./static/images/low-light_img_synth_ex.png"
                                     alt="Low-light image synthesis pipeline"
                                 />
-                            </div>
-                            <p
-                                class="has-text-justified"
-                                style="
-                                    font-size: 0.9rem;
-                                    color: #666;
-                                    margin-top: 0.5rem;
-                                "
-                            >
-                                Synthesized low-light image examples across
-                                degradation levels L0–L5. The top row shows EV
-                                drop only, while the bottom row shows EV drop
-                                combined with noise injection. The lower-right
-                                insets show 1/4-image crops with pixel
-                                intensities amplified for visibility; the
-                                numbers (×10, ×20, ×50) indicate the
-                                amplification factor.
-                            </p>
+                                <figcaption
+                                    style="
+                                        font-size: 0.9rem;
+                                        color: #666;
+                                        margin-top: 0.5rem;
+                                    "
+                                >
+                                    Synthesized low-light image examples across
+                                    degradation levels L0–L5. The top row shows
+                                    EV drop only, while the bottom row shows EV
+                                    drop combined with noise injection. The
+                                    lower-right insets show 1/4-image crops with
+                                    pixel intensities amplified for visibility;
+                                    the numbers (×10, ×20, ×50) indicate the
+                                    amplification factor.
+                                </figcaption>
+                            </figure>
                         </div>
 
                         <!--Dataset Construction-->
@@ -354,6 +372,68 @@
                                 representative subset of 52 scenes from HM3D-Sem
                                 dataset.
                             </p>
+                        </div>
+
+                        <!--Question Family & Dataset Statistics-->
+                        <div class="content has-text-justified">
+                            <h3 class="title is-4">
+                                Question Family and Dataset Statistics
+                            </h3>
+
+                            <div
+                                class="columns"
+                                style="
+                                    margin-top: 1.5rem;
+                                    margin-left: -2rem;
+                                    margin-right: -2rem;
+                                "
+                            >
+                                <div class="column is-half">
+                                    <figure>
+                                        <img
+                                            src="./static/images/fig_q_fam.png"
+                                            alt="Question family"
+                                            style="width: 100%"
+                                        />
+                                        <figcaption
+                                            style="
+                                                font-size: 0.9rem;
+                                                color: #666;
+                                                margin-top: 0.5rem;
+                                            "
+                                        >
+                                            Five DarkEQA question categories
+                                            with examples. DarkEQA encompasses
+                                            questions asking room-type
+                                            recognition, room affordance check,
+                                            object recognition, object
+                                            attribute, and closest object
+                                            recognition.
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="column is-half">
+                                    <figure>
+                                        <img
+                                            src="./static/images/fig_stat.png"
+                                            alt="Dataset statistics"
+                                            style="width: 100%"
+                                        />
+                                        <figcaption
+                                            style="
+                                                font-size: 0.9rem;
+                                                color: #666;
+                                                margin-top: 0.5rem;
+                                            "
+                                        >
+                                            Dataset statistics, including
+                                            semantic-class coverage,
+                                            room-category distribution, and
+                                            question-category distribution.
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -367,66 +447,68 @@
                         <h2 class="title is-3">Experiments</h2>
 
                         <!--Analysis Figure-->
-                        <div
-                            class="has-text-justified"
-                            style="margin: 1.5rem 0"
-                        >
-                            <img
-                                src="./static/images/fig_analysis.png"
-                                alt="Evaluation summary on our DarkEQA"
-                            />
+                        <div class="content has-text-justified">
+                            <figure class="has-text-centered">
+                                <img
+                                    src="./static/images/fig_analysis.png"
+                                    alt="Evaluation summary on our DarkEQA"
+                                />
+                                <figcaption
+                                    style="
+                                        font-size: 0.9rem;
+                                        color: #666;
+                                        margin-top: 0.5rem;
+                                    "
+                                >
+                                    Degradation level indicates the severity of
+                                    low-light corruption: L0 corresponds to the
+                                    original (well-lit) input, and higher levels
+                                    (L1 → L5) denote progressively darker
+                                    (lower-illumination) inputs. We evaluate a
+                                    range of open-source VLMs (LLaVA,InternVL,
+                                    and Qwen-VL series, 7B–32B). The shaded
+                                    regions in (a) and (b) denote the
+                                    minimum–maximum accuracy across models at
+                                    each degradation level. (a) Impact of noise
+                                    injection. (b) Impact of LLIE
+                                    pre-processing. (c) Model-wise comparison.
+                                    (d) Image samples enhanced with LLIE model.
+                                    We include GPT-4 as a Blind-LLM baseline
+                                    (evaluated without vision; gray dashed line)
+                                    and GPT-4o [16] as an upper-bound reference
+                                    (black line).
+                                </figcaption>
+                            </figure>
                         </div>
-                        <p
-                            class="has-text-justified"
-                            style="
-                                font-size: 0.9rem;
-                                color: #666;
-                                margin-top: 0.5rem;
-                            "
-                        >
-                            Degradation level indicates the severity of
-                            low-light corruption: L0 corresponds to the original
-                            (well-lit) input, and higher levels (L1 → L5) denote
-                            progressively darker (lower-illumination) inputs. We
-                            evaluate a range of open-source VLMs
-                            (LLaVA,InternVL, and Qwen-VL series, 7B–32B). The
-                            shaded regions in (a) and (b) denote the
-                            minimum–maximum accuracy across models at each
-                            degradation level. (a) Impact of noise injection.
-                            (b) Impact of LLIE pre-processing. (c) Model-wise
-                            comparison. (d) Image samples enhanced with LLIE
-                            model. We include GPT-4 as a Blind-LLM baseline
-                            (evaluated without vision; gray dashed line) and
-                            GPT-4o [16] as an upper-bound reference (black
-                            line).
-                        </p>
                         <br />
 
                         <!--Question-wise Accuracy Figure-->
-                        <div class="has-text-centered" style="margin: 1.5rem 0">
-                            <img
-                                src="./static/images/fig_question_wise.png"
-                                alt="Question-wise evaluation result on our DarkEQA"
-                                style="width: 60%"
-                            />
+                        <div class="content has-text-justified">
+                            <figure class="has-text-centered">
+                                <img
+                                    src="./static/images/fig_question_wise.png"
+                                    alt="Question-wise evaluation result on our DarkEQA"
+                                    style="width: 60%"
+                                />
+                                <figcaption
+                                    style="
+                                        font-size: 0.9rem;
+                                        color: #666;
+                                        margin-top: 0.5rem;
+                                    "
+                                >
+                                    We plot VLM accuracy across different
+                                    question types under increasing low-light
+                                    degradation, where darker lines indicate
+                                    more severe degradation and the gray dashed
+                                    line denotes the GPT-4 Blind-LLM baseline.
+                                    We observe significant drops in "Room Type
+                                    Recognition" and "Object Attribute – Color,"
+                                    where VLM performance falls below the GPT-4
+                                    Blind-LLM baseline.
+                                </figcaption>
+                            </figure>
                         </div>
-                        <p
-                            class="has-text-justified"
-                            style="
-                                font-size: 0.9rem;
-                                color: #666;
-                                margin-top: 0.5rem;
-                            "
-                        >
-                            We plot VLM accuracy across different question types
-                            under increasing low-light degradation, where darker
-                            lines indicate more severe degradation and the gray
-                            dashed line denotes the GPT-4 Blind-LLM baseline. We
-                            observe significant drops in “Room Type Recognition”
-                            and “Object Attribute – Color,” where VLM
-                            performance falls below the GPT-4 Blind-LLM
-                            baseline.
-                        </p>
                         <br />
 
                         <!--Full Result Table-->
