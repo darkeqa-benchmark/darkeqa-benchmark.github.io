@@ -4,16 +4,16 @@
         <meta charset="utf-8" />
         <meta
             name="description"
-            content="DarkEQA: A benchmark for evaluating vision-language models on embodied question answering in low-light indoor environments."
+            content="DarkQA: Benchmarking Vision-Language Models on Visual-Primitive Question Answering in Low-Light Indoor Scenes"
         />
         <meta
             name="keywords"
-            content="DarkEQA, EQA, Embodied Question Answering, VLM, Vision-Language Models, Embodied AI, Low-Light, Question Answering"
+            content="DarkQA, EQA, Embodied Question Answering, VLM, Vision-Language Models, Embodied AI, Low-Light, Question Answering"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>
-            DarkEQA: Benchmarking Vision-Language Models for Embodied Question
-            Answering in Low-Light Indoor Environments
+            DarkQA: Benchmarking Vision-Language Models on Visual-Primitive Question Answering 
+            in Low-Light Indoor Scenes
         </title>
 
         <link
@@ -72,9 +72,9 @@
                     <div class="columns is-centered">
                         <div class="column has-text-centered">
                             <h1 class="title is-1 publication-title">
-                                DarkEQA: <br />Benchmarking Vision-Language
-                                Models <br />for Embodied Question Answering
-                                <br />in Low-Light Indoor Environments
+                                DarkQA: <br />Benchmarking Vision-Language
+                                Models <br />for Visual-Primitive Question Answering
+                                <br />in Low-Light Indoor Scenes
                             </h1>
                             <div class="is-size-5 publication-authors">
                                 <span class="author-block">
@@ -157,11 +157,11 @@
         <section class="hero teaser">
             <div class="container is-max-widescreen">
                 <div class="hero-body">
-                    <figure class="has-text-centered">
+                    <figure class="has-text-centered teaser-figure">
                         <img
-                            src="./static/images/DarkEQA_teaser.png"
-                            alt="DarkEQA Teaser"
-                            style="width: 100%"
+                            src="./static/images/DarkQA_teaser.png"
+                            alt="DarkQA Teaser"
+                            class="teaser-image"
                         />
                         <div class="content has-text-justified">
                             <figcaption
@@ -173,21 +173,14 @@
                                     font-style: italic;
                                 "
                             >
-                                Traditional Embodied Question Answering (EQA)
-                                primarily evaluates VLMs on well-lit images,
-                                overlooking their robustness to real-world
-                                low-light conditions. We present DarkEQA, a new
-                                benchmark designed to address this evaluation
-                                void. DarkEQA assesses VLM performance under two
-                                distinct conditions: clean, well-lit inputs (L0)
-                                and a multi-level ladder of physics-based
-                                low-light images (L1-L5). This heterogeneous
-                                design enables a clear analysis of both
-                                commonsense reasoning and robustness to visual
-                                degradation. Furthermore, the benchmark examines
-                                the effect of applying Low-Light Image
-                                Enhancement (LLIE) models as a pre-processing
-                                step.
+                                We present DarkQA, a new benchmark that evaluates 
+                                VLM robustness in visual-primitives under low-light 
+                                conditions in embodied scenario. DarkQA assesses VLM 
+                                performance under two distinct conditions: clean, 
+                                well-lit inputs (L0) and a multi-level ladder of 
+                                physics-based low-light images (L1-L5). Furthermore, 
+                                the benchmark examines the effect of applying Low-Light 
+                                Image Enhancement (LLIE) models as a pre-processing step.
                             </figcaption>
                         </div>
                     </figure>
@@ -203,40 +196,41 @@
                         <h2 class="title is-3">Abstract</h2>
                         <div class="content has-text-justified">
                             <p>
-                                Vision Language Models (VLMs) are increasingly
-                                adopted as central reasoning modules for
-                                embodied agents. Existing benchmarks evaluate
-                                their capabilities under ideal, well-lit
-                                conditions, yet robust 24/7 operation demands
-                                performance under a wide range of visual
-                                degradations, including low-light conditions at
-                                night or in dark environments--a core necessity
-                                that has been largely overlooked.
+                                Vision Language Models (VLMs) are increasingly adopted 
+                                as central reasoning modules for embodied agents. 
+                                Existing benchmarks evaluate their capabilities under ideal, 
+                                well-lit conditions, yet robust 24/7 operation 
+                                demands performance under a wide range of visual degradations, 
+                                including low-light conditions at night or in dark environments, 
+                                a core necessity that has been largely overlooked. 
                             </p>
                             <p>
-                                To address this underexplored challenge, we
-                                present DarkEQA, an open-source benchmark for
-                                evaluating EQA-relevant perceptual primitives
-                                under multi-level low-light conditions. DarkEQA
-                                isolates the perception bottleneck by evaluating
-                                question answering from egocentric observations
-                                under controlled degradations, enabling
-                                attributable robustness analysis.
+                                To address this underexplored challenge, we present DarkQA, 
+                                an open-source benchmark for evaluating perceptual primitives 
+                                under multi-level low-light conditions in embodied scenarios. 
+                                DarkQA evaluates single-view egocentric observations across 
+                                controlled degradation levels, isolating low-light perceptual 
+                                failures before they are entangled with complex embodied tasks.
                             </p>
                             <p>
-                                A key design feature of DarkEQA is its physical
-                                fidelity: visual degradations are modeled in
-                                linear RAW space, simulating physics-based
-                                illumination drop and sensor noise followed by
-                                an ISP-inspired rendering pipeline. We
-                                demonstrate the utility of DarkEQA by evaluating
-                                a wide range of state-of-the-art VLMs and
-                                Low-Light Image Enhancement (LLIE) models. Our
-                                analysis systematically reveals VLMs'
-                                limitations when operating under these
-                                challenging visual conditions. Our code and
-                                benchmark dataset will be released upon
-                                acceptance.
+                                The benchmark contains 9.4K deterministically generated and 
+                                verifiable question-image pairs spanning five visual-primitive 
+                                families. A key design feature of DarkQA is its physical fidelity: 
+                                visual degradations are modeled in linear RAW space, simulating 
+                                physics-based illumination drop and sensor noise followed by 
+                                an ISP-inspired rendering pipeline; we further validate the 
+                                synthesis against real paired low-light camera data. We evaluate 
+                                representative VLMs and Low-Light Image Enhancement (LLIE) 
+                                preprocessing methods. 
+                            </p>
+                            <p>
+                                Results show consistent VLM degradation under low illumination and 
+                                sensor noise, while LLIE provides severity-dependent but unstable 
+                                recovery. We demonstrate the utility of DarkQA by evaluating a wide 
+                                range of state-of-the-art VLMs and Low-Light Image Enhancement (LLIE) 
+                                models, and systematically reveal VLMs' limitations when operating 
+                                under these challenging visual conditions. Our code and benchmark 
+                                dataset will be released upon acceptance.
                             </p>
                         </div>
                     </div>
@@ -524,9 +518,9 @@
         <section class="section" id="BibTeX">
             <div class="container is-max-desktop content">
                 <h2 class="title">BibTeX</h2>
-                <pre><code>@article{park2025darkeqa,
+                <pre><code>@article{park2025darkqa,
   author  = {Park, Yohan and Ha, Hyunwoo and Jo, Wonjun and Oh, Tae-Hyun},
-  title   = {DarkEQA: Benchmarking Vision-Language Models for Embodied Question Answering in Low-Light Indoor Environments},
+  title   = {DarkQA: Benchmarking Vision-Language Models on Visual-Primitive Question Answering in Low-Light Indoor Scenes},
   journal = {arXiv preprint arXiv:2512.24985},
   year    = {2025},
 }</code></pre>
