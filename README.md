@@ -1,4 +1,4 @@
-# DarkEQA
+# DarkQA
 
 This is the repository that contains source code for the [DarkEQA website](https://darkeqa-benchmark.github.io/).
 
