@@ -4,7 +4,7 @@ This is the repository that contains source code for the [DarkQA website](https:
 
 If you find DarkEQA is useful for your work, please cite:
 ```
-@article{park2025darkeqa,
+@article{park2025darkqa,
   title   = {DarkQA: Benchmarking Vision-Language Models on Visual-Primitive Question Answering in Low-Light Indoor Scenes},
   author  = {Park, Yohan and Ha, Hyunwoo and Jo, Wonjun and Oh, Tae-Hyun},
   journal = {arXiv preprint arXiv:2512.24985},
