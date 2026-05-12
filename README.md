@@ -1,11 +1,11 @@
 # DarkQA
 
-This is the repository that contains source code for the [DarkEQA website](https://darkeqa-benchmark.github.io/).
+This is the repository that contains source code for the [DarkQA website](https://darkqa.github.io/).
 
 If you find DarkEQA is useful for your work, please cite:
 ```
 @article{park2025darkeqa,
-  title   = {DarkEQA: Benchmarking Vision-Language Models for Embodied Question Answering in Low-Light Indoor Environments},
+  title   = {DarkQA: Benchmarking Vision-Language Models on Visual-Primitive Question Answering in Low-Light Indoor Scenes},
   author  = {Park, Yohan and Ha, Hyunwoo and Jo, Wonjun and Oh, Tae-Hyun},
   journal = {arXiv preprint arXiv:2512.24985},
   year    = {2025}
